@@ -108,9 +108,9 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             customizePom(pom)
-            groupId 'com.testvagrant.ekam'
+            groupId 'dunzoit'
             artifactId 'ekam'
-            version '0.3.1-beta'
+            version '1.0'
 
             from components.java
 
@@ -149,36 +149,25 @@ def customizePom(pom) {
         // add all items necessary for maven central publication
         root.children().last() + {
             resolveStrategy = Closure.DELEGATE_FIRST
-
             description 'Ekam, a unified test automation platform, helps you to get started with WEB | MOBILE | API Test Automation'
             name 'Ekam'
-            url 'https://github.com/testvagrant/ekam'
-            organization {
-                name 'com.testvagrant.ekam'
-                url 'https://github.com/testvagrant'
-            }
-            issueManagement {
-                system 'GitLab'
-                url 'https://github.com/testvagrant/ekam/issues'
-            }
+            url 'https://github.com/dunzoit/ekam'
+
             licenses {
                 license {
                     name 'MIT License'
-                    url 'https://github.com/testvagrant/ekam/-/blob/master/LICENSE'
+                    url 'https://github.com/dunzoit/ekam/-/blob/master/LICENSE'
                     distribution 'repo'
                 }
             }
             scm {
-                url 'https://github.com/testvagrant/ekam'
-                connection 'https://github.com/testvagrant/ekam.git'
-                developerConnection 'git@github.com:testvagrant/ekam.git'
+                url 'https://github.com/dunzoit/ekam'
+                connection 'https://github.com/dunzoit/ekam.git'
+                developerConnection 'git@github.com:dunzoit/ekam.git'
             }
             developers {
                 developer {
-                    name 'Sudarshan GS'
-                }
-                developer {
-                    name 'Krishnanand B'
+                    name 'vinod'
                 }
             }
         }
@@ -193,8 +182,4 @@ model {
 
 task runTests(type: Test) {
     useTestNG()
-}
-
-signing {
-    sign publishing.publications
 }
