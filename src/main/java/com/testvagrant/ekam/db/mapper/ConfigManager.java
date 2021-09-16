@@ -62,7 +62,7 @@ public class ConfigManager {
     try {
       String fileName =
               System.getProperty(ConfigKeys.DB.DRIVERS).replaceAll(".yml", "").trim().concat(".yml");
-      InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+      InputStream inputStream = ConfigManager.class.getResourceAsStream("/db/" + fileName);
       LinkedHashMap<String, Object> parse =
               new Yaml().loadAs(inputStream, LinkedHashMap.class);
 

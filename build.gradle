@@ -82,6 +82,11 @@ dependencies {
     // generic wait
     implementation('org.awaitility:awaitility:4.1.0')
     testImplementation("org.assertj:assertj-guava:2.0.1")
+
+    //Jackson
+    implementation('com.fasterxml.jackson.core:jackson-core:2.8.8')
+    implementation('com.fasterxml.jackson.core:jackson-annotations:2.8.8')
+    implementation('com.fasterxml.jackson.core:jackson-databind:2.8.8')
 }
 
 test {
