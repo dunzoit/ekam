@@ -26,17 +26,9 @@ public class ApiHostsModule extends AbstractModule {
   }
 
   private Map<String, String> loadApiTestFeed() {
-    String env = System.getProperty(ConfigKeys.Env.API_ENV, System.getProperty("env", ""));
     String fileName =
         System.getProperty(ConfigKeys.Api.HOSTS).replaceAll(".json", "").trim().concat(".json");
-
-    Optional<File> file = fileUtils().findResource(fileName, env);
-
-    if (file.isPresent()) {
-      return new GsonParser().deserialize(file.get().getAbsolutePath(), Map.class);
-    }
-
-    final InputStream inputStream = ApiHostsModule.class.getResourceAsStream(fileName);
+    final InputStream inputStream = ApiHostsModule.class.getResourceAsStream("/" + fileName);
     if (inputStream != null) {
       try {
         final ObjectMapper mapper = new ObjectMapper();

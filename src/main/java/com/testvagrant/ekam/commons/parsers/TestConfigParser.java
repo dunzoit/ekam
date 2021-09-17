@@ -11,7 +11,7 @@ public class TestConfigParser {
   final ObjectMapper objectMapper = new ObjectMapper();
 
   public <T> T loadFeed(String name, String env, Class<T> tClass) {
-    final InputStream inputStream = TestConfigParser.class.getResourceAsStream(name + ".json");
+    final InputStream inputStream = TestConfigParser.class.getResourceAsStream("/" + name + ".json");
     try {
       return objectMapper.readValue(inputStream, tClass);
     } catch (IOException e) {
@@ -21,7 +21,7 @@ public class TestConfigParser {
   }
 
   public <T> T loadFeed(String name, String env, Type tType) {
-    final InputStream inputStream = TestConfigParser.class.getResourceAsStream(name + ".json");
+    final InputStream inputStream = TestConfigParser.class.getResourceAsStream("/" + name + ".json");
     try {
       return objectMapper.readValue(inputStream, (JavaType) tType);
     } catch (IOException e) {
