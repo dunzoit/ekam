@@ -4,7 +4,7 @@ import com.google.inject.Injector;
 import com.testvagrant.ekam.commons.path.PathBuilder;
 import com.testvagrant.ekam.config.models.LogConfig;
 import com.testvagrant.ekam.internal.logger.EkamLogger;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.logging.LogEntry;
 
