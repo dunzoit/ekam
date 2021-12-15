@@ -43,7 +43,7 @@ dependencies {
     implementation 'io.qameta.allure:allure-cucumber6-jvm:2.14.0'
 
     //logger
-    implementation("org.apache.logging.log4j:log4j-core:2.15.0")
+    implementation("org.apache.logging.log4j:log4j-core:2.16.0")
 
     //github
     implementation('com.github.javafaker:javafaker:1.0.2')
