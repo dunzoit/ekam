@@ -20,7 +20,7 @@ public class DeviceCacheDisposeFactory {
     }
     String hub = mobileConfig.getHub().toLowerCase();
     CloudConfig cloudConfig = new ConfigLoader().loadConfig(hub);
-    releaseRemoteDevice(targetDetails, hub, cloudConfig);
+    //releaseRemoteDevice(targetDetails, hub, cloudConfig);
   }
 
   private static void releaseRemoteDevice(
