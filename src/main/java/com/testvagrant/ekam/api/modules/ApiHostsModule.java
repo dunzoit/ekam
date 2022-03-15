@@ -3,18 +3,14 @@ package com.testvagrant.ekam.api.modules;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
-import com.testvagrant.ekam.commons.io.GsonParser;
 import com.testvagrant.ekam.commons.parsers.SystemPropertyParser;
 import com.testvagrant.ekam.config.models.ConfigKeys;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
-import static com.testvagrant.ekam.commons.io.FileUtilities.fileUtils;
 import static com.testvagrant.ekam.logger.EkamLogger.ekamLogger;
 
 @SuppressWarnings("unchecked")
