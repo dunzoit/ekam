@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import static com.testvagrant.ekam.commons.io.FileUtilities.fileUtils;
+import static com.testvagrant.ekam.logger.EkamLogger.ekamLogger;
 
 @SuppressWarnings("unchecked")
 public class ApiHostsModule extends AbstractModule {
@@ -23,6 +24,7 @@ public class ApiHostsModule extends AbstractModule {
   public void configure() {
     Map<String, String> envProps = loadApiTestFeed();
     Names.bindProperties(binder(), SystemPropertyParser.parse(envProps));
+    ekamLogger().info("Binding hosts {} to Named properties", envProps);
   }
 
   private Map<String, String> loadApiTestFeed() {
