@@ -1,11 +1,10 @@
 package com.testvagrant.ekam.mobile.models;
 
+import com.testvagrant.ekam.mobile.AppiumTimeCapabilities;
+import com.testvagrant.ekam.commons.parsers.SystemPropertyParser;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Getter
 @Setter
@@ -22,6 +21,19 @@ public class MobileTestFeed {
           add(new HashMap<>());
         }
       };
+    public Map<String,Object> parseSystemProperty(Map<String,Object>capabilities){
+        Map<String,Object>parsedCapabilities=new HashMap<>();
+        for(Map.Entry<String,Object>property:capabilities.entrySet()) {
+            String capability=property.getKey();
+            String capabilityValue=SystemPropertyParser.parse(property.getValue().toString().trim());
+            if(Arrays.stream(AppiumTimeCapabilities.values()).anyMatch((t) -> t.name().equals(capability))) {
+                parsedCapabilities.put(capability, Double.valueOf(capabilityValue).intValue());
+                continue;
+            }
+            parsedCapabilities.put(capability,capabilityValue);
+        }
+        return parsedCapabilities;
+    }
 
   @Builder.Default private List<String> serverArguments = new ArrayList<>();
 }

@@ -1,3 +1,14 @@
+# 1.0.2
+* Added support for time capabilities
+
+# 1.0.1
+* Release Device error fix
+* Ability to add environment variable in desired capabilities
+
+# 1.0.0
+* Added loggers
+* Updated sub project versions to 1.0.0
+
 # 0.3.1-beta
 * Bump-up ekam-drivers
 

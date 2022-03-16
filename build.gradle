@@ -7,6 +7,7 @@ plugins {
 
 repositories {
     mavenCentral()
+//    mavenLocal()
     jcenter()
 }
 
@@ -54,10 +55,11 @@ dependencies {
     //testvagrant
     implementation('com.testvagrant.ekam:ekam-drivers:1.0.4')
     implementation('com.testvagrant.ekam:ekam-report-publisher:0.0.3-beta')
-    implementation('com.testvagrant.ekam:ekam-api:0.1.0')
-    implementation('com.testvagrant.ekam:ekam-commons:0.1.0')
+    implementation('com.testvagrant.ekam:ekam-api:1.0.0')
+    implementation('com.testvagrant.ekam:ekam-commons:1.0.0')
     implementation('com.testvagrant.ekam:ekam-config:1.0.3')
-    implementation('com.testvagrant.ekam:ekam-device-manager:0.1.0')
+    implementation('com.testvagrant.ekam:ekam-device-manager:1.0.0')
+    implementation('com.testvagrant.ekam:ekam-logger:1.0.0')
 
     //selenium
     implementation('org.seleniumhq.selenium:selenium-java:3.141.59')
@@ -87,6 +89,10 @@ dependencies {
     implementation('com.fasterxml.jackson.core:jackson-core:2.8.8')
     implementation('com.fasterxml.jackson.core:jackson-annotations:2.8.8')
     implementation('com.fasterxml.jackson.core:jackson-databind:2.8.8')
+    //logging
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'ch.qos.logback:logback-core:1.2.5'
+    implementation 'ch.qos.logback:logback-classic:1.2.5'
 }
 
 test {
@@ -115,8 +121,7 @@ publishing {
             customizePom(pom)
             groupId 'dunzoit'
             artifactId 'ekam'
-            version '1.0'
-
+            version '1.0.2'
             from components.java
 
             artifact(sourceJar) {
