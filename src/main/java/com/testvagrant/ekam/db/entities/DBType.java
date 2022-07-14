@@ -3,7 +3,8 @@ package com.testvagrant.ekam.db.entities;
 public enum DBType {
   POSTGRES("postgresql"),
   MYSQL("mysql"),
-  DB2("as400");
+  DB2("as400"),
+  BIGQUERY("bigquery");
 
   private final String dbString;
 
