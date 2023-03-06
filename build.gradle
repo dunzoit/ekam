@@ -3,6 +3,7 @@ plugins {
     id "io.qameta.allure" version "2.8.1"
     id 'maven-publish'
     id 'signing'
+    id "com.google.cloud.artifactregistry.gradle-plugin" version "2.1.5"
 }
 
 repositories {
@@ -144,13 +145,13 @@ publishing {
 
     repositories {
         maven {
-            url "https://oss.sonatype.org/service/local/staging/deploy/maven2"
-            credentials {
-                username System.getenv("sonatypeUsername")
-                password System.getenv("sonatypePassword")
+            url "artifactregistry://asia-south1-maven.pkg.dev/dev-application-294611/maven-qe"
+//            credentials {
+//                username System.getenv("sonatypeUsername")
+//                password System.getenv("sonatypePassword")
 //                username sonatypeUsername
 //                password sonatypePassword
-            }
+//            }
         }
     }
 }
