@@ -21,6 +21,9 @@ repositories {
     maven {
         url 'https://repo.jenkins-ci.org/public/'
     }
+    maven {
+        url "artifactregistry://asia-south1-maven.pkg.dev/dev-application-294611/maven-qe"
+    }
 }
 
 sourceCompatibility = 1.8
@@ -65,13 +68,13 @@ dependencies {
     implementation('io.appium:java-client:7.5.1')
 
     //testvagrant
-    implementation('com.testvagrant.ekam:ekam-drivers:1.0.4')
-    implementation('com.testvagrant.ekam:ekam-report-publisher:0.0.3-beta')
-    implementation('com.testvagrant.ekam:ekam-api:0.1.0')
-    implementation('com.testvagrant.ekam:ekam-commons:0.1.0')
-    implementation('com.testvagrant.ekam:ekam-config:1.0.3')
-    implementation('dunzoit:ekam-device-manager:1.0.3')
-    implementation('com.testvagrant.ekam:ekam-logger:1.0.0')
+    implementation('dunzoit:ekam-drivers:1.0.4')
+    implementation('dunzoit:ekam-report-publisher:0.0.3-beta')
+    implementation('dunzoit:ekam-api:1.0.0')
+    implementation('dunzoit:ekam-commons:1.0.2')
+    implementation('dunzoit:ekam-config:1.0.3')
+    implementation('dunzoit:ekam-device-manager:1.0.3.1')
+    implementation('dunzoit:ekam-logger:1.0.0')
 
     //selenium
     implementation('org.seleniumhq.selenium:selenium-java:3.141.59')
@@ -129,7 +132,7 @@ publishing {
             customizePom(pom)
             groupId 'dunzoit'
             artifactId 'ekam'
-            version '1.2'
+            version '1.2.1'
 
             from components.java
 
