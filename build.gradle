@@ -121,7 +121,7 @@ publishing {
             customizePom(pom)
             groupId 'dunzoit'
             artifactId 'ekam'
-            version '1.0.2'
+            version '1.2.2'
             from components.java
 
             artifact(sourceJar) {
