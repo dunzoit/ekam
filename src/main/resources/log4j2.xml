@@ -7,7 +7,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="TRACE">
+        <Root level="INFO">
             <AppenderRef ref="ConsoleAppender"/>
         </Root>
         <Logger name="com.epam.reportportal" level="INFO" additivity="false">
