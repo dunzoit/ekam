@@ -132,7 +132,7 @@ publishing {
             customizePom(pom)
             groupId 'dunzoit'
             artifactId 'ekam'
-            version '1.2.1'
+            version '1.3'
 
             from components.java
 
@@ -149,12 +149,6 @@ publishing {
     repositories {
         maven {
             url "artifactregistry://asia-south1-maven.pkg.dev/dev-application-294611/maven-qe"
-//            credentials {
-//                username System.getenv("sonatypeUsername")
-//                password System.getenv("sonatypePassword")
-//                username sonatypeUsername
-//                password sonatypePassword
-//            }
         }
     }
 }
