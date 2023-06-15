@@ -6,6 +6,7 @@ import com.google.inject.name.Names;
 import com.testvagrant.ekam.commons.parsers.SystemPropertyParser;
 import com.testvagrant.ekam.config.models.ConfigKeys;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -35,6 +36,7 @@ public class ApiHostsModule extends AbstractModule {
         e.printStackTrace();
       }
     }
+
     return new HashMap<>();
   }
 }
