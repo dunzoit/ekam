@@ -73,7 +73,7 @@ dependencies {
     implementation('dunzoit:ekam-api:1.0.0')
     implementation('dunzoit:ekam-commons:1.0.2')
     implementation('dunzoit:ekam-config:1.0.3')
-    implementation('dunzoit:ekam-device-manager:1.0.3.1')
+    implementation('dunzoit:ekam-device-manager:1.0.4')
     implementation('dunzoit:ekam-logger:1.0.0')
 
     //selenium
