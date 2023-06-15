@@ -61,31 +61,6 @@ public class ConfigManager {
     }
   }*/
 
-
-  private DBConfig getDBConfiguration(String name) {
-    try {
-      String fileName =
-              System.getProperty(ConfigKeys.DB.DRIVERS).replaceAll(".yml", "").trim().concat(".yml");
-      InputStream inputStream = ConfigManager.class.getResourceAsStream("/db/" + fileName);
-      LinkedHashMap<String, Object> parse =
-              new Yaml().loadAs(inputStream, LinkedHashMap.class);
-
-      Map.Entry<String, Object> stringObjectEntry =
-              parse.entrySet().stream()
-                      .filter(entry -> entry.getKey().equalsIgnoreCase(name))
-                      .findFirst()
-                      .orElseThrow(() -> new InvalidConnectionException("drivers", name));
-
-      Gson gson = new Gson();
-      String json = gson.toJson(stringObjectEntry.getValue());
-      DBConfiguration configuration = gson.fromJson(json, DBConfiguration.class);
-      return updateConfiguration(configuration);
-    } catch (Exception ex) {
-      throw new RuntimeException(ex.getMessage());
-    }
-  }*/
-
-
   private DBConfig getDBConfiguration(String name) {
     try {
       String fileName =
@@ -108,8 +83,6 @@ public class ConfigManager {
       throw new RuntimeException(ex.getMessage());
     }
   }
-
-
 
   private DBConfiguration updateConfiguration(DBConfiguration configuration) {
     configuration.setUsername(SystemPropertyParser.parse(configuration.getUsername()));
