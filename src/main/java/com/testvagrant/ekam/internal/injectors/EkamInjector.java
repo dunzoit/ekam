@@ -15,7 +15,7 @@ import com.testvagrant.ekam.internal.logger.EkamLogger;
 import com.testvagrant.ekam.internal.modules.EkamTestModule;
 import com.testvagrant.ekam.internal.modules.LoggerModule;
 import com.testvagrant.ekam.internal.modules.StepRecorderModule;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.util.Arrays;
