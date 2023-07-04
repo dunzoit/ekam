@@ -1,5 +1,6 @@
 package com.testvagrant.ekam.mobile.models;
 
+import com.testvagrant.ekam.commons.parsers.DataTypeParser.ParserStrategyCreator;
 import com.testvagrant.ekam.mobile.AppiumTimeCapabilities;
 import com.testvagrant.ekam.commons.parsers.SystemPropertyParser;
 import lombok.*;
@@ -24,13 +25,7 @@ public class MobileTestFeed {
     public Map<String,Object> parseSystemProperty(Map<String,Object>capabilities){
         Map<String,Object>parsedCapabilities=new HashMap<>();
         for(Map.Entry<String,Object>property:capabilities.entrySet()) {
-            String capability=property.getKey();
-            String capabilityValue=SystemPropertyParser.parse(property.getValue().toString().trim());
-            if(Arrays.stream(AppiumTimeCapabilities.values()).anyMatch((t) -> t.name().equals(capability))) {
-                parsedCapabilities.put(capability, Double.valueOf(capabilityValue).intValue());
-                continue;
-            }
-            parsedCapabilities.put(capability,capabilityValue);
+            parsedCapabilities.put(property.getKey(), new ParserStrategyCreator().parse(property.getValue()));
         }
         return parsedCapabilities;
     }
